@@ -1,0 +1,46 @@
+22:41:54,986 INFO  [org.springframework.web.context.ContextLoader] Root WebApplicationContext: initialization started
+22:41:55,051 INFO  [org.springframework.web.context.support.XmlWebApplicationContext] Refreshing Root WebApplicationContext: startup date [Sat May 23 22:41:55 CST 2015]; root of context hierarchy
+22:41:55,098 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from file [G:\J2EEworkSpace\myweb\build\classes\applicationContext.xml]
+22:41:55,614 ERROR [org.springframework.web.context.ContextLoader] Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Unexpected exception parsing XML document from file [G:\J2EEworkSpace\myweb\build\classes\applicationContext.xml]; nested exception is java.lang.NoClassDefFoundError: org/springframework/transaction/interceptor/TransactionInterceptor
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:414)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:764)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:406)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:756)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:242)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:699)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:454)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:90)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:263)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:80)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/transaction/interceptor/TransactionInterceptor
+	at org.springframework.transaction.config.AnnotationDrivenBeanDefinitionParser$AopAutoProxyConfigurer.configureAutoProxyCreator(AnnotationDrivenBeanDefinitionParser.java:127)
+	at org.springframework.transaction.config.AnnotationDrivenBeanDefinitionParser.parse(AnnotationDrivenBeanDefinitionParser.java:84)
+	at org.springframework.beans.factory.xml.NamespaceHandlerSupport.parse(NamespaceHandlerSupport.java:74)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1427)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1417)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:174)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:144)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:100)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:510)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	... 25 more
+Caused by: java.lang.ClassNotFoundException: org.springframework.transaction.interceptor.TransactionInterceptor
+	at runjettyrun.ProjectClassLoader.loadClass(ProjectClassLoader.java:94)
+	... 35 more
